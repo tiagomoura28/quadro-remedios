@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quadro de Horários dos Remédios</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#12205b}
@@ -22,8 +24,10 @@ td{padding:12px 8px;border-top:1px solid #dce5f4;text-align:center}
 .badge{display:inline-block;padding:5px 9px;border-radius:12px;background:#fff1b5;color:#654e00;font-size:12px}
 input[type="time"]{border:1px solid #9aace0;border-radius:8px;padding:7px;font-size:15px;max-width:125px}
 input[type="checkbox"]{width:26px;height:26px;accent-color:#13a15b;cursor:pointer}
-tr.taken{background:#effaf2}
-tr.taken .time{text-decoration:line-through;opacity:.6}
+
+tr.dose-taken{background:#effaf2}
+tr.dose-taken .time{text-decoration:line-through;opacity:.6}
+
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:pointer}
 .primary{background:#1265c8;color:white}.secondary{background:#e9eef7;color:#19316c}
@@ -34,6 +38,7 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
 .notes{margin-top:18px;background:#fffbe7;border:2px solid #e4bd34;border-radius:16px;padding:16px}
 .notes textarea{width:100%;min-height:90px;border:1px solid #d8c77d;border-radius:10px;padding:10px;font-size:15px;resize:vertical}
 .status{margin-top:10px;font-size:14px;color:#52658e}
+
 @media(max-width:720px){
   .container{padding:10px}
   th,td{padding:8px 4px;font-size:12px}
@@ -44,8 +49,11 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
 }
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <header>
   <h1>💊 QUADRO DE HORÁRIOS DOS REMÉDIOS</h1>
   <p>Organize • Acompanhe • Cuide</p>
@@ -53,106 +61,347 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
 
 <section class="card">
   <div class="title allegra">☀️ USO DIÁRIO — ALLEGRA (ANTIALÉRGICO)</div>
+
   <table>
-    <thead><tr><th>Horário previsto</th><th>Remédio</th><th>Observação</th><th>Horário que foi tomado</th><th>✓ Tomado</th></tr></thead>
+    <thead>
+      <tr>
+        <th>Horário previsto</th>
+        <th>Remédio</th>
+        <th>Observação</th>
+        <th>Horário que foi tomado</th>
+        <th>✓ Tomado</th>
+      </tr>
+    </thead>
+
     <tbody>
+
       <tr data-id="allegra-07">
         <td class="time">07:00<br><small>(Manhã)</small></td>
-        <td class="medicine">Allegra<br>(antialérgico)</td><td>Manhã</td>
+        <td class="medicine">Allegra<br>(antialérgico)</td>
+        <td>Manhã</td>
         <td><input type="time" class="taken-time"></td>
         <td><input type="checkbox" class="taken"></td>
       </tr>
+
       <tr data-id="allegra-19">
         <td class="time">19:00<br><small>(Noite)</small></td>
-        <td class="medicine">Allegra<br>(antialérgico)</td><td>Noite</td>
+        <td class="medicine">Allegra<br>(antialérgico)</td>
+        <td>Noite</td>
         <td><input type="time" class="taken-time"></td>
         <td><input type="checkbox" class="taken"></td>
       </tr>
+
     </tbody>
   </table>
 </section>
 
 <section class="card">
-  <div class="title dipirona">💜 DIPIRONA — 4 ml <span style="font-size:15px">(SE DOR OU FEBRE)</span></div>
+
+  <div class="title dipirona">
+    💜 DIPIRONA — 4 ml
+    <span style="font-size:15px">(SE DOR OU FEBRE)</span>
+  </div>
+
   <table>
-    <thead><tr><th>Data</th><th>Horário previsto</th><th>Remédio</th><th>Dose</th><th>Observação</th><th>Horário que foi tomado</th><th>✓</th></tr></thead>
+
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Horário previsto</th>
+        <th>Remédio</th>
+        <th>Dose</th>
+        <th>Observação</th>
+        <th>Horário que foi tomado</th>
+        <th>✓</th>
+      </tr>
+    </thead>
+
     <tbody>
-      <tr data-id="dip-11-08"><td rowspan="3"><b>11/08</b></td><td class="time">08:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-11-16"><td class="time">16:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-11-00"><td class="time">00:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
 
-      <tr data-id="dip-12-06"><td rowspan="3"><b>12/08</b></td><td class="time">06:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-12-14"><td class="time">14:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-12-22"><td class="time">22:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
+      <tr data-id="dip-11-08">
+        <td rowspan="3"><b>11/08</b></td>
+        <td class="time">08:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
 
-      <tr data-id="dip-13-04"><td rowspan="3"><b>13/08</b></td><td class="time">04:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-13-12"><td class="time">12:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
-      <tr data-id="dip-13-20"><td class="time">20:00</td><td>Dipirona</td><td>4 ml</td><td><span class="badge">Se dor ou febre</span></td><td><input type="time" class="taken-time"></td><td><input type="checkbox" class="taken"></td></tr>
+      <tr data-id="dip-11-16">
+        <td class="time">16:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+      <tr data-id="dip-11-00">
+        <td class="time">00:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+
+      <tr data-id="dip-12-06">
+        <td rowspan="3"><b>12/08</b></td>
+        <td class="time">06:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+      <tr data-id="dip-12-14">
+        <td class="time">14:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+      <tr data-id="dip-12-22">
+        <td class="time">22:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+
+      <tr data-id="dip-13-04">
+        <td rowspan="3"><b>13/08</b></td>
+        <td class="time">04:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+      <tr data-id="dip-13-12">
+        <td class="time">12:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
+      <tr data-id="dip-13-20">
+        <td class="time">20:00</td>
+        <td>Dipirona</td>
+        <td>4 ml</td>
+        <td><span class="badge">Se dor ou febre</span></td>
+        <td><input type="time" class="taken-time"></td>
+        <td><input type="checkbox" class="taken"></td>
+      </tr>
+
     </tbody>
   </table>
 </section>
 
 <div class="actions">
-  <button class="primary" onclick="window.print()">🖨️ Imprimir</button>
-  <button class="secondary" onclick="resetAll()">↺ Limpar marcações</button>
+
+  <button class="primary" onclick="window.print()">
+    🖨️ Imprimir
+  </button>
+
+  <button class="secondary" onclick="resetAll()">
+    ↺ Limpar marcações
+  </button>
+
 </div>
 
 <div class="notice">
-  <div class="box warning"><h2>⚠️ ATENÇÃO</h2><p>• A Dipirona deve ser tomada somente se houver dor ou febre.</p><p>• Siga sempre a orientação do médico.</p></div>
-  <div class="box important"><h2>✅ IMPORTANTE</h2><p>Registre o horário em que o remédio foi tomado.</p><div class="status" id="status">0 doses registradas</div></div>
+
+  <div class="box warning">
+    <h2>⚠️ ATENÇÃO</h2>
+    <p>• A Dipirona deve ser tomada somente se houver dor ou febre.</p>
+    <p>• Siga sempre a orientação do médico.</p>
+  </div>
+
+  <div class="box important">
+    <h2>✅ IMPORTANTE</h2>
+    <p>Registre o horário em que o remédio foi tomado.</p>
+    <div class="status" id="status">0 doses registradas</div>
+  </div>
+
 </div>
 
 <div class="notes">
+
   <h2>📝 ANOTAÇÕES</h2>
-  <textarea id="notes" placeholder="Digite aqui suas anotações..."></textarea>
+
+  <textarea
+    id="notes"
+    placeholder="Digite aqui suas anotações..."
+  ></textarea>
+
 </div>
+
 </div>
 
 <script>
+
 const KEY='quadro-remedios-v1';
+
 function save(){
-  const data={rows:{},notes:document.getElementById('notes').value};
+
+  const data={
+    rows:{},
+    notes:document.getElementById('notes').value
+  };
+
   document.querySelectorAll('tr[data-id]').forEach(r=>{
+
     data.rows[r.dataset.id]={
       checked:r.querySelector('.taken').checked,
       time:r.querySelector('.taken-time').value
     };
+
   });
-  localStorage.setItem(KEY,JSON.stringify(data));
-  updateStatus();
-}
-function load(){
-  const data=JSON.parse(localStorage.getItem(KEY)||'null');
-  if(data){
-    document.querySelectorAll('tr[data-id]').forEach(r=>{
-      const x=data.rows?.[r.dataset.id];
-      if(x){r.querySelector('.taken').checked=!!x.checked;r.querySelector('.taken-time').value=x.time||'';}
-      r.classList.toggle('taken',r.querySelector('.taken').checked);
-    });
-    document.getElementById('notes').value=data.notes||'';
+
+  try{
+
+    localStorage.setItem(KEY,JSON.stringify(data));
+
+  }catch(error){
+
+    console.error('Erro ao salvar os dados:',error);
+
   }
+
   updateStatus();
+
 }
+
+
+function load(){
+
+  let data=null;
+
+  try{
+
+    const saved=localStorage.getItem(KEY);
+
+    data=saved ? JSON.parse(saved) : null;
+
+  }catch(error){
+
+    console.error('Erro ao carregar os dados salvos:',error);
+
+    localStorage.removeItem(KEY);
+
+  }
+
+
+  if(data){
+
+    document.querySelectorAll('tr[data-id]').forEach(r=>{
+
+      const x=data.rows?.[r.dataset.id];
+
+      if(x){
+
+        r.querySelector('.taken').checked=!!x.checked;
+
+        r.querySelector('.taken-time').value=x.time||'';
+
+      }
+
+      r.classList.toggle(
+        'dose-taken',
+        r.querySelector('.taken').checked
+      );
+
+    });
+
+    document.getElementById('notes').value=data.notes||'';
+
+  }
+
+  updateStatus();
+
+}
+
+
 function updateStatus(){
+
   let n=0;
-  document.querySelectorAll('.taken').forEach(c=>{if(c.checked)n++;});
-  document.getElementById('status').textContent=n+' dose(s) registrada(s)';
-}
-function resetAll(){
-  if(!confirm('Deseja limpar todas as marcações e horários?')) return;
-  document.querySelectorAll('.taken').forEach(c=>c.checked=false);
-  document.querySelectorAll('.taken-time').forEach(t=>t.value='');
-  save();
-}
-document.querySelectorAll('.taken,.taken-time').forEach(el=>{
-  el.addEventListener('change',()=>{
-    const row=el.closest('tr');
-    if(el.classList.contains('taken')) row.classList.toggle('taken',el.checked);
-    save();
+
+  document.querySelectorAll('.taken').forEach(c=>{
+
+    if(c.checked)n++;
+
   });
+
+  document.getElementById('status').textContent=
+    n+' dose(s) registrada(s)';
+
+}
+
+
+function resetAll(){
+
+  if(!confirm('Deseja limpar todas as marcações e horários?'))
+    return;
+
+  document.querySelectorAll('.taken').forEach(c=>{
+
+    c.checked=false;
+
+    c.closest('tr').classList.remove('dose-taken');
+
+  });
+
+  document.querySelectorAll('.taken-time').forEach(t=>{
+    t.value='';
+  });
+
+  save();
+
+}
+
+
+document.querySelectorAll('.taken,.taken-time').forEach(el=>{
+
+  el.addEventListener('change',()=>{
+
+    const row=el.closest('tr');
+
+    if(el.classList.contains('taken')){
+
+      row.classList.toggle(
+        'dose-taken',
+        el.checked
+      );
+
+    }
+
+    save();
+
+  });
+
 });
-document.getElementById('notes').addEventListener('input',save);
+
+
+document.getElementById('notes').addEventListener(
+  'input',
+  save
+);
+
 load();
+
 </script>
+
 </body>
 </html>
+```
