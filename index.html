@@ -1,11 +1,19 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quadro de Horários dos Remédios</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+  Quadro de Horários dos Remédios
+</title>
+
 
 <style>
 
@@ -237,6 +245,13 @@ button:disabled{
   color:#19316c;
 }
 
+.sync{
+  margin-top:8px;
+  text-align:center;
+  font-size:13px;
+  color:#52658e;
+}
+
 .hidden-frame{
   display:none;
 }
@@ -269,6 +284,7 @@ button:disabled{
 }
 
 </style>
+
 </head>
 
 
@@ -276,10 +292,6 @@ button:disabled{
 
 <div class="container">
 
-
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
 
 <header>
 
@@ -299,8 +311,18 @@ button:disabled{
 
 
 <div class="date-today">
+
   📅 Hoje:
   <span id="today"></span>
+
+</div>
+
+
+<div
+  class="sync"
+  id="syncStatus"
+>
+  🔄 Carregando dados online...
 </div>
 
 
@@ -311,7 +333,9 @@ button:disabled{
 <section class="card">
 
   <div class="title allegra">
+
     ☀️ USO DIÁRIO — ALLEGRA (ANTIALÉRGICO)
+
   </div>
 
 
@@ -321,11 +345,25 @@ button:disabled{
 
       <tr>
 
-        <th>Horário previsto</th>
-        <th>Remédio</th>
-        <th>Observação</th>
-        <th>Horário que foi tomado</th>
-        <th>✓ Tomado</th>
+        <th>
+          Horário previsto
+        </th>
+
+        <th>
+          Remédio
+        </th>
+
+        <th>
+          Observação
+        </th>
+
+        <th>
+          Horário que foi tomado
+        </th>
+
+        <th>
+          ✓ Tomado
+        </th>
 
       </tr>
 
@@ -344,13 +382,21 @@ button:disabled{
       >
 
         <td class="time">
+
           07:00<br>
-          <small>(Manhã)</small>
+
+          <small>
+            (Manhã)
+          </small>
+
         </td>
 
         <td class="medicine">
+
           Allegra<br>
+
           (antialérgico)
+
         </td>
 
         <td>
@@ -358,17 +404,21 @@ button:disabled{
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -383,13 +433,21 @@ button:disabled{
       >
 
         <td class="time">
+
           19:00<br>
-          <small>(Noite)</small>
+
+          <small>
+            (Noite)
+          </small>
+
         </td>
 
         <td class="medicine">
+
           Allegra<br>
+
           (antialérgico)
+
         </td>
 
         <td>
@@ -397,17 +455,21 @@ button:disabled{
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -459,7 +521,7 @@ button:disabled{
     <tbody>
 
 
-      <!-- ================= 11/08 ================= -->
+      <!-- 11/08 -->
 
       <tr
         data-id="dip-11-08"
@@ -486,23 +548,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -529,23 +597,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -572,29 +646,35 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
 
 
-      <!-- ================= 12/08 ================= -->
+      <!-- 12/08 -->
 
       <tr
         data-id="dip-12-06"
@@ -621,23 +701,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -664,23 +750,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -703,37 +795,39 @@ button:disabled{
         </td>
 
         <td>
-          Dipirona
-        </td>
-
-        <td>
           4 ml
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
 
 
-      <!-- ================= 13/08 ================= -->
+      <!-- 13/08 -->
 
       <tr
         data-id="dip-13-04"
@@ -760,23 +854,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -803,23 +903,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -846,23 +952,29 @@ button:disabled{
         </td>
 
         <td>
+
           <span class="badge">
             Se dor ou febre
           </span>
+
         </td>
 
         <td>
+
           <input
             type="time"
             class="taken-time"
           >
+
         </td>
 
         <td>
+
           <input
             type="checkbox"
             class="taken"
           >
+
         </td>
 
       </tr>
@@ -905,7 +1017,6 @@ button:disabled{
 
 <div class="notice">
 
-
   <div class="box warning">
 
     <h2>
@@ -942,7 +1053,6 @@ button:disabled{
 
   </div>
 
-
 </div>
 
 
@@ -965,13 +1075,13 @@ button:disabled{
     class="status"
     id="notesStatus"
   >
-    Anotações salvas neste dispositivo.
+    ☁️ Anotações online.
   </div>
 
 </div>
 
 
-<!-- IFRAME INVISÍVEL -->
+<!-- IFRAME PARA ENVIO POST -->
 
 <iframe
   name="googleScriptFrame"
@@ -988,47 +1098,53 @@ button:disabled{
 
 /* =========================================================
    URL DO GOOGLE APPS SCRIPT
-   =========================================================
 
-   URL fornecida:
-
-   https://script.google.com/macros/s/AKfycbzHXrTyC6SQZN5elk2j_UA7m-xngVr-ujIJhleSb2VQuLKPHBi_H99dX7xvF8tsEa5Hmg/exec
-
-   ========================================================= */
+   ESTA É A ÚNICA URL QUE VOCÊ PRECISA MANTER.
+========================================================= */
 
 const GOOGLE_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbzHXrTyC6SQZN5elk2j_UA7m-xngVr-ujIJhleSb2VQuLKPHBi_H99dX7xvF8tsEa5Hmg/exec';
 
 
 /* =========================================================
-   CHAVE DO ARMAZENAMENTO LOCAL
-   ========================================================= */
+   INTERVALO DE ATUALIZAÇÃO
+========================================================= */
 
-const LOCAL_KEY =
-  'quadro-remedios-v3';
+const INTERVALO_ATUALIZACAO =
+  10000;
 
 
 /* =========================================================
    DATA ATUAL
-   ========================================================= */
+========================================================= */
 
 function obterDataAtual(){
 
   const agora =
     new Date();
 
+
   const dia =
     String(
       agora.getDate()
-    ).padStart(2,'0');
+    ).padStart(
+      2,
+      '0'
+    );
+
 
   const mes =
     String(
       agora.getMonth() + 1
-    ).padStart(2,'0');
+    ).padStart(
+      2,
+      '0'
+    );
+
 
   const ano =
     agora.getFullYear();
+
 
   return (
     dia +
@@ -1048,23 +1164,32 @@ document.getElementById(
 
 
 /* =========================================================
-   HORÁRIO ATUAL
-   ========================================================= */
+   HORA ATUAL
+========================================================= */
 
 function obterHoraAtual(){
 
   const agora =
     new Date();
 
+
   const hora =
     String(
       agora.getHours()
-    ).padStart(2,'0');
+    ).padStart(
+      2,
+      '0'
+    );
+
 
   const minuto =
     String(
       agora.getMinutes()
-    ).padStart(2,'0');
+    ).padStart(
+      2,
+      '0'
+    );
+
 
   return (
     hora +
@@ -1077,7 +1202,7 @@ function obterHoraAtual(){
 
 /* =========================================================
    STATUS
-   ========================================================= */
+========================================================= */
 
 function setStatus(
   mensagem,
@@ -1089,8 +1214,10 @@ function setStatus(
       'status'
     );
 
+
   status.textContent =
     mensagem;
+
 
   status.className =
     'status ' +
@@ -1100,15 +1227,34 @@ function setStatus(
 
 
 /* =========================================================
-   CONTAR DOSES MARCADAS
-   ========================================================= */
+   STATUS DE SINCRONIZAÇÃO
+========================================================= */
+
+function setSyncStatus(
+  mensagem
+){
+
+  document.getElementById(
+    'syncStatus'
+  ).textContent =
+    mensagem;
+
+}
+
+
+/* =========================================================
+   CONTAR DOSES
+========================================================= */
 
 function updateStatus(){
 
   let total = 0;
 
+
   document
-    .querySelectorAll('.taken')
+    .querySelectorAll(
+      '.taken'
+    )
     .forEach(
       checkbox => {
 
@@ -1139,241 +1285,13 @@ function updateStatus(){
 
 
 /* =========================================================
-   SALVAR ESTADO NO NAVEGADOR
-   ========================================================= */
-
-function salvarEstadoLocal(){
-
-  const dados = {};
-
-
-  document
-    .querySelectorAll(
-      'tr[data-id]'
-    )
-    .forEach(
-      row => {
-
-        const checkbox =
-          row.querySelector(
-            '.taken'
-          );
-
-        const horario =
-          row.querySelector(
-            '.taken-time'
-          );
-
-
-        dados[
-          row.dataset.id
-        ] = {
-
-          checked:
-            checkbox.checked,
-
-          time:
-            horario.value
-
-        };
-
-      }
-    );
-
-
-  try{
-
-    localStorage.setItem(
-
-      LOCAL_KEY,
-
-      JSON.stringify(
-        dados
-      )
-
-    );
-
-  }
-  catch(error){
-
-    console.error(
-      'Erro no armazenamento local:',
-      error
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   CARREGAR ESTADO LOCAL
-   ========================================================= */
-
-function carregarEstadoLocal(){
-
-  try{
-
-    const salvo =
-      localStorage.getItem(
-        LOCAL_KEY
-      );
-
-
-    if(!salvo){
-
-      return;
-
-    }
-
-
-    const dados =
-      JSON.parse(
-        salvo
-      );
-
-
-    document
-      .querySelectorAll(
-        'tr[data-id]'
-      )
-      .forEach(
-        row => {
-
-          const registro =
-            dados[
-              row.dataset.id
-            ];
-
-
-          if(!registro){
-
-            return;
-
-          }
-
-
-          const checkbox =
-            row.querySelector(
-              '.taken'
-            );
-
-          const horario =
-            row.querySelector(
-              '.taken-time'
-            );
-
-
-          checkbox.checked =
-            !!registro.checked;
-
-
-          horario.value =
-            registro.time ||
-            '';
-
-
-          row.classList.toggle(
-
-            'dose-taken',
-
-            checkbox.checked
-
-          );
-
-        }
-      );
-
-
-  }
-  catch(error){
-
-    console.error(
-      'Erro ao carregar dados:',
-      error
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   ENVIAR DOSE PARA GOOGLE SHEETS
-   ========================================================= */
-
-function enviarDose(row){
-
-  const checkbox =
-    row.querySelector(
-      '.taken'
-    );
-
-  const horario =
-    row.querySelector(
-      '.taken-time'
-    );
-
-
-  if(
-    !checkbox.checked
-  ){
-
-    return;
-
-  }
-
-
-  /*
-    Se o usuário marcar sem colocar
-    o horário, usamos o horário atual.
-  */
-
-  if(
-    !horario.value
-  ){
-
-    horario.value =
-      obterHoraAtual();
-
-  }
-
-
-  const data =
-    row.dataset.data ||
-    obterDataAtual();
-
-
-  /*
-    Pega o horário previsto da linha.
-  */
-
-  const horarioPrevisto =
-    row
-      .querySelector('.time')
-      .textContent
-      .trim()
-      .split(/\s+/)[0];
-
-
-  const remedio =
-    row.dataset.remedio ||
-    '';
-
-
-  const dose =
-    row.dataset.dose ||
-    '';
-
-
-  const observacao =
-    row.dataset.observacao ||
-    '';
-
-
-  /*
-    Cria formulário invisível.
-  */
+   ENVIAR FORMULÁRIO
+========================================================= */
+
+function enviarFormulario(
+  campos,
+  callback
+){
 
   const form =
     document.createElement(
@@ -1397,69 +1315,34 @@ function enviarDose(row){
     'none';
 
 
-  function campo(
-    nome,
-    valor
-  ){
+  Object.keys(
+    campos
+  ).forEach(
+    nome => {
 
-    const input =
-      document.createElement(
-        'input'
+      const input =
+        document.createElement(
+          'input'
+        );
+
+
+      input.type =
+        'hidden';
+
+
+      input.name =
+        nome;
+
+
+      input.value =
+        campos[nome];
+
+
+      form.appendChild(
+        input
       );
 
-
-    input.type =
-      'hidden';
-
-
-    input.name =
-      nome;
-
-
-    input.value =
-      valor;
-
-
-    form.appendChild(
-      input
-    );
-
-  }
-
-
-  campo(
-    'data',
-    data
-  );
-
-
-  campo(
-    'remedio',
-    remedio
-  );
-
-
-  campo(
-    'horarioPrevisto',
-    horarioPrevisto
-  );
-
-
-  campo(
-    'horarioTomado',
-    horario.value
-  );
-
-
-  campo(
-    'dose',
-    dose
-  );
-
-
-  campo(
-    'observacao',
-    observacao
+    }
   );
 
 
@@ -1468,18 +1351,8 @@ function enviarDose(row){
   );
 
 
-  setStatus(
-    '☁️ Enviando para a planilha...',
-    'saving'
-  );
-
-
   form.submit();
 
-
-  /*
-    Aguarda o envio.
-  */
 
   setTimeout(
     () => {
@@ -1495,21 +1368,447 @@ function enviarDose(row){
       }
 
 
-      setStatus(
-        '☁️ Registro enviado para a planilha.',
-        'success'
-      );
+      if(callback){
+
+        callback();
+
+      }
 
     },
-    1500
+    1200
   );
 
 }
 
 
 /* =========================================================
+   ENVIAR DOSE
+========================================================= */
+
+function enviarDose(
+  row
+){
+
+  const checkbox =
+    row.querySelector(
+      '.taken'
+    );
+
+
+  const horario =
+    row.querySelector(
+      '.taken-time'
+    );
+
+
+  if(
+    !checkbox.checked
+  ){
+
+    return;
+
+  }
+
+
+  if(
+    !horario.value
+  ){
+
+    horario.value =
+      obterHoraAtual();
+
+  }
+
+
+  const horarioPrevisto =
+    row
+      .querySelector(
+        '.time'
+      )
+      .textContent
+      .trim()
+      .split(
+        /\s+/
+      )[0];
+
+
+  const dados = {
+
+    acao:
+      'dose',
+
+    id:
+      row.dataset.id,
+
+    data:
+      row.dataset.data ||
+      obterDataAtual(),
+
+    remedio:
+      row.dataset.remedio ||
+      '',
+
+    horarioPrevisto:
+      horarioPrevisto,
+
+    horarioTomado:
+      horario.value,
+
+    dose:
+      row.dataset.dose ||
+      '',
+
+    observacao:
+      row.dataset.observacao ||
+      ''
+
+  };
+
+
+  setStatus(
+    '☁️ Salvando online...',
+    'saving'
+  );
+
+
+  enviarFormulario(
+    dados,
+    () => {
+
+      setStatus(
+        '☁️ Dose salva online.',
+        'success'
+      );
+
+      atualizarDadosOnline();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   REMOVER DOSE
+========================================================= */
+
+function removerDose(
+  row
+){
+
+  enviarFormulario({
+
+    acao:
+      'remover',
+
+    id:
+      row.dataset.id
+
+  });
+
+
+  setStatus(
+    '☁️ Atualizando...',
+    'saving'
+  );
+
+
+  setTimeout(
+    () => {
+
+      setStatus(
+        'Dose removida.',
+        'success'
+      );
+
+      atualizarDadosOnline();
+
+    },
+    1200
+  );
+
+}
+
+
+/* =========================================================
+   CARREGAR DADOS ONLINE
+========================================================= */
+
+function atualizarDadosOnline(){
+
+  const callbackName =
+    'receberDados_' +
+    Date.now();
+
+
+  window[
+    callbackName
+  ] = function(
+    resposta
+  ){
+
+    try{
+
+      if(
+        resposta &&
+        resposta.ok
+      ){
+
+        aplicarDadosOnline(
+          resposta
+        );
+
+
+        const agora =
+          new Date();
+
+
+        setSyncStatus(
+
+          '☁️ Sincronizado às ' +
+
+          agora
+            .toLocaleTimeString(
+              'pt-BR',
+              {
+                hour:'2-digit',
+                minute:'2-digit',
+                second:'2-digit'
+              }
+            )
+
+        );
+
+      }
+      else{
+
+        setSyncStatus(
+          '⚠️ Não foi possível carregar os dados.'
+        );
+
+      }
+
+    }
+    catch(error){
+
+      console.error(
+        error
+      );
+
+
+      setSyncStatus(
+        '⚠️ Erro ao atualizar os dados.'
+      );
+
+    }
+
+
+    delete window[
+      callbackName
+    ];
+
+
+    if(
+      script.parentNode
+    ){
+
+      script.parentNode.removeChild(
+        script
+      );
+
+    }
+
+  };
+
+
+  const script =
+    document.createElement(
+      'script'
+    );
+
+
+  script.src =
+    GOOGLE_SCRIPT_URL +
+    '?action=read&callback=' +
+    encodeURIComponent(
+      callbackName
+    ) +
+    '&t=' +
+    Date.now();
+
+
+  script.onerror =
+    function(){
+
+      setSyncStatus(
+        '⚠️ Erro de conexão com a planilha.'
+      );
+
+
+      delete window[
+        callbackName
+      ];
+
+
+      if(
+        script.parentNode
+      ){
+
+        script.parentNode.removeChild(
+          script
+        );
+
+      }
+
+    };
+
+
+  document.body.appendChild(
+    script
+  );
+
+}
+
+
+/* =========================================================
+   APLICAR DADOS RECEBIDOS
+========================================================= */
+
+function aplicarDadosOnline(
+  dados
+){
+
+  const registros =
+    dados.registros ||
+    [];
+
+
+  /*
+    Cria um mapa dos registros.
+  */
+
+  const mapa = {};
+
+
+  registros.forEach(
+    registro => {
+
+      mapa[
+        registro.id
+      ] =
+        registro;
+
+    }
+  );
+
+
+  /*
+    Atualiza cada linha da página.
+  */
+
+  document
+    .querySelectorAll(
+      'tr[data-id]'
+    )
+    .forEach(
+      row => {
+
+        const id =
+          row.dataset.id;
+
+
+        const registro =
+          mapa[id];
+
+
+        const checkbox =
+          row.querySelector(
+            '.taken'
+          );
+
+
+        const horario =
+          row.querySelector(
+            '.taken-time'
+          );
+
+
+        if(
+          registro
+        ){
+
+          checkbox.checked =
+            true;
+
+
+          horario.value =
+            registro.horarioTomado ||
+            '';
+
+
+          row.classList.add(
+            'dose-taken'
+          );
+
+        }
+        else{
+
+          /*
+            Não há registro online.
+          */
+
+          checkbox.checked =
+            false;
+
+
+          horario.value =
+            '';
+
+
+          row.classList.remove(
+            'dose-taken'
+          );
+
+        }
+
+      }
+    );
+
+
+  /*
+    Atualiza as anotações.
+  */
+
+  const notes =
+    document.getElementById(
+      'notes'
+    );
+
+
+  /*
+    Só substitui o conteúdo se
+    o usuário não estiver digitando.
+  */
+
+  if(
+    document.activeElement !== notes
+  ){
+
+    notes.value =
+      dados.notas ||
+      '';
+
+  }
+
+
+  updateStatus();
+
+}
+
+
+/* =========================================================
    CHECKBOXES
-   ========================================================= */
+========================================================= */
 
 document
   .querySelectorAll(
@@ -1546,9 +1845,14 @@ document
             );
 
           }
+          else{
 
+            removerDose(
+              row
+            );
 
-          salvarEstadoLocal();
+          }
+
 
           updateStatus();
 
@@ -1561,7 +1865,7 @@ document
 
 /* =========================================================
    HORÁRIO TOMADO
-   ========================================================= */
+========================================================= */
 
 document
   .querySelectorAll(
@@ -1587,8 +1891,7 @@ document
 
 
           if(
-            checkbox.checked &&
-            this.value
+            checkbox.checked
           ){
 
             enviarDose(
@@ -1596,9 +1899,6 @@ document
             );
 
           }
-
-
-          salvarEstadoLocal();
 
         }
       );
@@ -1608,8 +1908,8 @@ document
 
 
 /* =========================================================
-   ANOTAÇÕES
-   ========================================================= */
+   ANOTAÇÕES ONLINE
+========================================================= */
 
 const notes =
   document.getElementById(
@@ -1623,58 +1923,58 @@ const notesStatus =
   );
 
 
+let temporizadorNotas =
+  null;
+
+
 notes.addEventListener(
   'input',
   function(){
 
-    try{
+    notesStatus.textContent =
+      '☁️ Salvando online...';
 
-      localStorage.setItem(
-        'quadro-remedios-notes',
-        this.value
+
+    clearTimeout(
+      temporizadorNotas
+    );
+
+
+    temporizadorNotas =
+      setTimeout(
+        salvarNotasOnline,
+        700
       );
-
-
-      notesStatus.textContent =
-        'Anotação salva neste dispositivo.';
-
-    }
-    catch(error){
-
-      notesStatus.textContent =
-        'Erro ao salvar anotação.';
-
-    }
 
   }
 );
 
 
 /* =========================================================
-   CARREGAR ANOTAÇÕES
-   ========================================================= */
+   SALVAR ANOTAÇÕES
+========================================================= */
 
-try{
+function salvarNotasOnline(){
 
-  const anotacao =
-    localStorage.getItem(
-      'quadro-remedios-notes'
-    );
+  enviarFormulario(
 
+    {
 
-  if(anotacao){
+      acao:
+        'nota',
 
-    notes.value =
-      anotacao;
+      texto:
+        notes.value
 
-  }
+    },
 
-}
-catch(error){
+    () => {
 
-  console.error(
-    'Erro ao carregar anotação:',
-    error
+      notesStatus.textContent =
+        '☁️ Anotação salva online.';
+
+    }
+
   );
 
 }
@@ -1682,16 +1982,16 @@ catch(error){
 
 /* =========================================================
    LIMPAR MARCAÇÕES
-   ========================================================= */
+========================================================= */
 
 function resetAll(){
 
   const confirmar =
     confirm(
 
-      'Deseja limpar as marcações da tela?\n\n' +
+      'Deseja desmarcar todas as doses nesta página?\n\n' +
 
-      'Os registros já enviados para a Google Planilha NÃO serão apagados.'
+      'As doses serão removidas dos registros online.'
 
     );
 
@@ -1705,61 +2005,113 @@ function resetAll(){
   }
 
 
-  document
-    .querySelectorAll(
-      '.taken'
-    )
-    .forEach(
-      checkbox => {
-
-        checkbox.checked =
-          false;
-
-
-        checkbox
-          .closest(
-            'tr'
-          )
-          .classList
-          .remove(
-            'dose-taken'
-          );
-
-      }
+  const linhas =
+    Array.from(
+      document.querySelectorAll(
+        'tr[data-id]'
+      )
     );
 
 
-  document
-    .querySelectorAll(
-      '.taken-time'
-    )
-    .forEach(
-      campo => {
+  let indice =
+    0;
 
-        campo.value =
-          '';
 
-      }
+  function removerProxima(){
+
+    if(
+      indice >= linhas.length
+    ){
+
+      setStatus(
+        '☁️ Marcações limpas.',
+        'success'
+      );
+
+
+      atualizarDadosOnline();
+
+
+      return;
+
+    }
+
+
+    const row =
+      linhas[indice];
+
+
+    const checkbox =
+      row.querySelector(
+        '.taken'
+      );
+
+
+    if(
+      checkbox.checked
+    ){
+
+      removerDose(
+        row
+      );
+
+    }
+
+
+    checkbox.checked =
+      false;
+
+
+    row.classList.remove(
+      'dose-taken'
     );
 
 
-  salvarEstadoLocal();
+    row
+      .querySelector(
+        '.taken-time'
+      )
+      .value =
+      '';
 
-  updateStatus();
+
+    indice++;
+
+
+    setTimeout(
+      removerProxima,
+      300
+    );
+
+  }
+
+
+  removerProxima();
 
 }
 
 
 /* =========================================================
-   INICIALIZAÇÃO
-   ========================================================= */
+   PRIMEIRA SINCRONIZAÇÃO
+========================================================= */
 
-carregarEstadoLocal();
+atualizarDadosOnline();
 
-updateStatus();
+
+/* =========================================================
+   ATUALIZAÇÃO AUTOMÁTICA
+========================================================= */
+
+setInterval(
+
+  atualizarDadosOnline,
+
+  INTERVALO_ATUALIZACAO
+
+);
 
 </script>
 
 </body>
+
 </html>
-```
