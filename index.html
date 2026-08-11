@@ -4,48 +4,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Quadro de Horários dos Remédios</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#12205b}
-.container{max-width:1100px;margin:0 auto;padding:18px}
-header{background:linear-gradient(135deg,#0d5bd7,#18a9a0);color:white;border-radius:22px;padding:24px;text-align:center;box-shadow:0 5px 18px #0002}
-header h1{margin:0;font-size:clamp(28px,5vw,48px)}
-header p{margin:8px 0 0;font-size:18px}
-.card{background:white;border-radius:18px;margin-top:18px;overflow:hidden;box-shadow:0 4px 16px #0001;border:1px solid #dce5f4}
-.title{padding:14px 18px;color:white;font-size:23px;font-weight:bold}
-.allegra{background:#1265c8}.dipirona{background:#7021bb}
-table{width:100%;border-collapse:collapse}
-th{background:#edf3ff;color:#142d73;padding:12px 8px;font-size:14px}
-td{padding:12px 8px;border-top:1px solid #dce5f4;text-align:center}
-.time{font-size:21px;font-weight:bold;color:#092a83}
-.medicine{font-weight:bold}
-.badge{display:inline-block;padding:5px 9px;border-radius:12px;background:#fff1b5;color:#654e00;font-size:12px}
-input[type="time"]{border:1px solid #9aace0;border-radius:8px;padding:7px;font-size:15px;max-width:125px}
-input[type="checkbox"]{width:26px;height:26px;accent-color:#13a15b;cursor:pointer}
+*{
+  box-sizing:border-box;
+}
 
-tr.dose-taken{background:#effaf2}
-tr.dose-taken .time{text-decoration:line-through;opacity:.6}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#12205b;
+}
 
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:pointer}
-.primary{background:#1265c8;color:white}.secondary{background:#e9eef7;color:#19316c}
-.notice{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:18px}
-.box{padding:18px;border-radius:16px}
-.warning{background:#fff0f0;border:2px solid #e34855;color:#6d1720}
-.important{background:#edfff2;border:2px solid #32a85b;color:#155a2d}
-.notes{margin-top:18px;background:#fffbe7;border:2px solid #e4bd34;border-radius:16px;padding:16px}
-.notes textarea{width:100%;min-height:90px;border:1px solid #d8c77d;border-radius:10px;padding:10px;font-size:15px;resize:vertical}
-.status{margin-top:10px;font-size:14px;color:#52658e}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:18px;
+}
+
+header{
+  background:linear-gradient(135deg,#0d5bd7,#18a9a0);
+  color:white;
+  border-radius:22px;
+  padding:24px;
+  text-align:center;
+  box-shadow:0 5px 18px #0002;
+}
+
+header h1{
+  margin:0;
+  font-size:clamp(28px,5vw,48px);
+}
+
+header p{
+  margin:8px 0 0;
+  font-size:18px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  margin-top:18px;
+  overflow:hidden;
+  box-shadow:0 4px 16px #0001;
+  border:1px solid #dce5f4;
+}
+
+.title{
+  padding:14px 18px;
+  color:white;
+  font-size:23px;
+  font-weight:bold;
+}
+
+.allegra{
+  background:#1265c8;
+}
+
+.dipirona{
+  background:#7021bb;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#edf3ff;
+  color:#142d73;
+  padding:12px 8px;
+  font-size:14px;
+}
+
+td{
+  padding:12px 8px;
+  border-top:1px solid #dce5f4;
+  text-align:center;
+}
+
+.time{
+  font-size:21px;
+  font-weight:bold;
+  color:#092a83;
+}
+
+.medicine{
+  font-weight:bold;
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:12px;
+  background:#fff1b5;
+  color:#654e00;
+  font-size:12px;
+}
+
+input[type="time"]{
+  border:1px solid #9aace0;
+  border-radius:8px;
+  padding:7px;
+  font-size:15px;
+  max-width:125px;
+}
+
+input[type="checkbox"]{
+  width:26px;
+  height:26px;
+  accent-color:#13a15b;
+  cursor:pointer;
+}
+
+tr.dose-taken{
+  background:#effaf2;
+}
+
+tr.dose-taken .time{
+  text-decoration:line-through;
+  opacity:.6;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:11px 16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+.primary{
+  background:#1265c8;
+  color:white;
+}
+
+.secondary{
+  background:#e9eef7;
+  color:#19316c;
+}
+
+.notice{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-top:18px;
+}
+
+.box{
+  padding:18px;
+  border-radius:16px;
+}
+
+.warning{
+  background:#fff0f0;
+  border:2px solid #e34855;
+  color:#6d1720;
+}
+
+.important{
+  background:#edfff2;
+  border:2px solid #32a85b;
+  color:#155a2d;
+}
+
+.notes{
+  margin-top:18px;
+  background:#fffbe7;
+  border:2px solid #e4bd34;
+  border-radius:16px;
+  padding:16px;
+}
+
+.notes textarea{
+  width:100%;
+  min-height:90px;
+  border:1px solid #d8c77d;
+  border-radius:10px;
+  padding:10px;
+  font-size:15px;
+  resize:vertical;
+}
+
+.status{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:bold;
+  color:#52658e;
+}
+
+.status.saving{
+  color:#d58a00;
+}
+
+.status.success{
+  color:#16833d;
+}
+
+.status.error{
+  color:#c62828;
+}
+
+.date-today{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
+  color:#19316c;
+}
+
+.online-indicator{
+  display:inline-block;
+  margin-top:8px;
+  padding:5px 10px;
+  border-radius:15px;
+  background:#ffffff33;
+  font-size:13px;
+}
+
+/*
+  Formulários usados para enviar os dados ao Apps Script.
+  Eles ficam invisíveis para o usuário.
+*/
+.hidden-frame{
+  display:none;
+}
 
 @media(max-width:720px){
-  .container{padding:10px}
-  th,td{padding:8px 4px;font-size:12px}
-  .time{font-size:17px}
-  input[type="time"]{width:105px;font-size:13px}
-  .notice{grid-template-columns:1fr}
-  .hide-mobile{display:none}
+
+  .container{
+    padding:10px;
+  }
+
+  th,
+  td{
+    padding:8px 4px;
+    font-size:12px;
+  }
+
+  .time{
+    font-size:17px;
+  }
+
+  input[type="time"]{
+    width:105px;
+    font-size:13px;
+  }
+
+  .notice{
+    grid-template-columns:1fr;
+  }
+
+  .hide-mobile{
+    display:none;
+  }
 }
 </style>
 </head>
@@ -55,15 +281,39 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
 <div class="container">
 
 <header>
+
   <h1>💊 QUADRO DE HORÁRIOS DOS REMÉDIOS</h1>
-  <p>Organize • Acompanhe • Cuide</p>
+
+  <p>
+    Organize • Acompanhe • Cuide
+  </p>
+
+  <div class="online-indicator">
+    ☁️ Registros salvos online
+  </div>
+
 </header>
 
+
+<div class="date-today">
+  📅 <span id="today"></span>
+</div>
+
+
+<!-- =========================
+     ALLEGRA
+========================= -->
+
 <section class="card">
-  <div class="title allegra">☀️ USO DIÁRIO — ALLEGRA (ANTIALÉRGICO)</div>
+
+  <div class="title allegra">
+    ☀️ USO DIÁRIO — ALLEGRA (ANTIALÉRGICO)
+  </div>
 
   <table>
+
     <thead>
+
       <tr>
         <th>Horário previsto</th>
         <th>Remédio</th>
@@ -71,40 +321,114 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
         <th>Horário que foi tomado</th>
         <th>✓ Tomado</th>
       </tr>
+
     </thead>
 
     <tbody>
 
-      <tr data-id="allegra-07">
-        <td class="time">07:00<br><small>(Manhã)</small></td>
-        <td class="medicine">Allegra<br>(antialérgico)</td>
-        <td>Manhã</td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+      <tr
+        data-id="allegra-07"
+        data-remedio="Allegra"
+        data-dose=""
+        data-observacao="Manhã"
+      >
+
+        <td class="time">
+          07:00<br>
+          <small>(Manhã)</small>
+        </td>
+
+        <td class="medicine">
+          Allegra<br>
+          (antialérgico)
+        </td>
+
+        <td>
+          Manhã
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
-      <tr data-id="allegra-19">
-        <td class="time">19:00<br><small>(Noite)</small></td>
-        <td class="medicine">Allegra<br>(antialérgico)</td>
-        <td>Noite</td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+
+      <tr
+        data-id="allegra-19"
+        data-remedio="Allegra"
+        data-dose=""
+        data-observacao="Noite"
+      >
+
+        <td class="time">
+          19:00<br>
+          <small>(Noite)</small>
+        </td>
+
+        <td class="medicine">
+          Allegra<br>
+          (antialérgico)
+        </td>
+
+        <td>
+          Noite
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
     </tbody>
+
   </table>
+
 </section>
+
+
+<!-- =========================
+     DIPIRONA
+========================= -->
 
 <section class="card">
 
   <div class="title dipirona">
+
     💜 DIPIRONA — 4 ml
-    <span style="font-size:15px">(SE DOR OU FEBRE)</span>
+
+    <span style="font-size:15px">
+      (SE DOR OU FEBRE)
+    </span>
+
   </div>
+
 
   <table>
 
     <thead>
+
       <tr>
         <th>Data</th>
         <th>Horário previsto</th>
@@ -114,127 +438,492 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
         <th>Horário que foi tomado</th>
         <th>✓</th>
       </tr>
+
     </thead>
+
 
     <tbody>
 
-      <tr data-id="dip-11-08">
-        <td rowspan="3"><b>11/08</b></td>
-        <td class="time">08:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
-      </tr>
 
-      <tr data-id="dip-11-16">
-        <td class="time">16:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
-      </tr>
+      <!-- 11/08 -->
 
-      <tr data-id="dip-11-00">
-        <td class="time">00:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
-      </tr>
+      <tr
+        data-id="dip-11-08"
+        data-data="11/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
 
+        <td rowspan="3">
+          <b>11/08</b>
+        </td>
 
-      <tr data-id="dip-12-06">
-        <td rowspan="3"><b>12/08</b></td>
-        <td class="time">06:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
-      </tr>
+        <td class="time">
+          08:00
+        </td>
 
-      <tr data-id="dip-12-14">
-        <td class="time">14:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
-      </tr>
+        <td>
+          Dipirona
+        </td>
 
-      <tr data-id="dip-12-22">
-        <td class="time">22:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
 
-      <tr data-id="dip-13-04">
-        <td rowspan="3"><b>13/08</b></td>
-        <td class="time">04:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+      <tr
+        data-id="dip-11-16"
+        data-data="11/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          16:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
-      <tr data-id="dip-13-12">
-        <td class="time">12:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+
+      <tr
+        data-id="dip-11-00"
+        data-data="12/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          00:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
-      <tr data-id="dip-13-20">
-        <td class="time">20:00</td>
-        <td>Dipirona</td>
-        <td>4 ml</td>
-        <td><span class="badge">Se dor ou febre</span></td>
-        <td><input type="time" class="taken-time"></td>
-        <td><input type="checkbox" class="taken"></td>
+
+      <!-- 12/08 -->
+
+      <tr
+        data-id="dip-12-06"
+        data-data="12/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td rowspan="3">
+          <b>12/08</b>
+        </td>
+
+        <td class="time">
+          06:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
+      </tr>
+
+
+      <tr
+        data-id="dip-12-14"
+        data-data="12/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          14:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
+      </tr>
+
+
+      <tr
+        data-id="dip-12-22"
+        data-data="12/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          22:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
+      </tr>
+
+
+      <!-- 13/08 -->
+
+      <tr
+        data-id="dip-13-04"
+        data-data="13/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td rowspan="3">
+          <b>13/08</b>
+        </td>
+
+        <td class="time">
+          04:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
+      </tr>
+
+
+      <tr
+        data-id="dip-13-12"
+        data-data="13/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          12:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
+      </tr>
+
+
+      <tr
+        data-id="dip-13-20"
+        data-data="13/08/2026"
+        data-remedio="Dipirona"
+        data-dose="4 ml"
+        data-observacao="Se dor ou febre"
+      >
+
+        <td class="time">
+          20:00
+        </td>
+
+        <td>
+          Dipirona
+        </td>
+
+        <td>
+          4 ml
+        </td>
+
+        <td>
+          <span class="badge">
+            Se dor ou febre
+          </span>
+        </td>
+
+        <td>
+          <input
+            type="time"
+            class="taken-time"
+          >
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            class="taken"
+          >
+        </td>
+
       </tr>
 
     </tbody>
+
   </table>
+
 </section>
+
+
+<!-- =========================
+     BOTÕES
+========================= -->
 
 <div class="actions">
 
-  <button class="primary" onclick="window.print()">
+  <button
+    class="primary"
+    onclick="window.print()"
+  >
     🖨️ Imprimir
   </button>
 
-  <button class="secondary" onclick="resetAll()">
+
+  <button
+    class="secondary"
+    onclick="resetAll()"
+  >
     ↺ Limpar marcações
   </button>
 
 </div>
 
+
+<!-- =========================
+     AVISOS
+========================= -->
+
 <div class="notice">
 
   <div class="box warning">
+
     <h2>⚠️ ATENÇÃO</h2>
-    <p>• A Dipirona deve ser tomada somente se houver dor ou febre.</p>
-    <p>• Siga sempre a orientação do médico.</p>
+
+    <p>
+      • A Dipirona deve ser tomada somente se houver dor ou febre.
+    </p>
+
+    <p>
+      • Siga sempre a orientação do médico.
+    </p>
+
   </div>
 
+
   <div class="box important">
+
     <h2>✅ IMPORTANTE</h2>
-    <p>Registre o horário em que o remédio foi tomado.</p>
-    <div class="status" id="status">0 doses registradas</div>
+
+    <p>
+      Registre o horário em que o remédio foi tomado.
+    </p>
+
+    <div
+      class="status"
+      id="status"
+    >
+      0 doses registradas
+    </div>
+
   </div>
 
 </div>
+
+
+<!-- =========================
+     ANOTAÇÕES
+========================= -->
 
 <div class="notes">
 
@@ -245,160 +934,675 @@ button{border:0;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:poi
     placeholder="Digite aqui suas anotações..."
   ></textarea>
 
-</div>
+  <div
+    class="status"
+    id="notesStatus"
+  >
+    As anotações são salvas neste dispositivo.
+  </div>
 
 </div>
+
+
+<!--
+  Iframe invisível usado para enviar os dados
+  ao Google Apps Script sem problemas de CORS.
+-->
+<iframe
+  name="googleScriptFrame"
+  id="googleScriptFrame"
+  class="hidden-frame"
+></iframe>
+
+
+</div>
+
 
 <script>
 
-const KEY='quadro-remedios-v1';
+/* ==========================================================
+   CONFIGURAÇÃO
+   ==========================================================
 
-function save(){
+   COLE AQUI A URL DO SEU GOOGLE APPS SCRIPT.
 
-  const data={
-    rows:{},
-    notes:document.getElementById('notes').value
-  };
+   Exemplo:
 
-  document.querySelectorAll('tr[data-id]').forEach(r=>{
+   https://script.google.com/macros/s/ABC123.../exec
 
-    data.rows[r.dataset.id]={
-      checked:r.querySelector('.taken').checked,
-      time:r.querySelector('.taken-time').value
-    };
+   ========================================================== */
 
-  });
+const GOOGLE_SCRIPT_URL =
+  'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
 
-  try{
 
-    localStorage.setItem(KEY,JSON.stringify(data));
+/* ==========================================================
+   CONFIGURAÇÃO LOCAL
+   ========================================================== */
 
-  }catch(error){
+const LOCAL_KEY =
+  'quadro-remedios-v2';
 
-    console.error('Erro ao salvar os dados:',error);
 
-  }
+/* ==========================================================
+   DATA ATUAL
+   ========================================================== */
 
-  updateStatus();
+function obterDataAtual(){
 
+  const agora = new Date();
+
+  const dia =
+    String(agora.getDate()).padStart(2,'0');
+
+  const mes =
+    String(agora.getMonth()+1).padStart(2,'0');
+
+  const ano =
+    agora.getFullYear();
+
+  return `${dia}/${mes}/${ano}`;
 }
 
 
-function load(){
-
-  let data=null;
-
-  try{
-
-    const saved=localStorage.getItem(KEY);
-
-    data=saved ? JSON.parse(saved) : null;
-
-  }catch(error){
-
-    console.error('Erro ao carregar os dados salvos:',error);
-
-    localStorage.removeItem(KEY);
-
-  }
+document.getElementById('today').textContent =
+  obterDataAtual();
 
 
-  if(data){
+/* ==========================================================
+   HORÁRIO ATUAL
+   ========================================================== */
 
-    document.querySelectorAll('tr[data-id]').forEach(r=>{
+function obterHoraAtual(){
 
-      const x=data.rows?.[r.dataset.id];
+  const agora = new Date();
 
-      if(x){
+  const hora =
+    String(agora.getHours()).padStart(2,'0');
 
-        r.querySelector('.taken').checked=!!x.checked;
+  const minuto =
+    String(agora.getMinutes()).padStart(2,'0');
 
-        r.querySelector('.taken-time').value=x.time||'';
-
-      }
-
-      r.classList.toggle(
-        'dose-taken',
-        r.querySelector('.taken').checked
-      );
-
-    });
-
-    document.getElementById('notes').value=data.notes||'';
-
-  }
-
-  updateStatus();
-
+  return `${hora}:${minuto}`;
 }
 
+
+/* ==========================================================
+   STATUS
+   ========================================================== */
+
+function setStatus(texto, tipo=''){
+
+  const status =
+    document.getElementById('status');
+
+  status.textContent =
+    texto;
+
+  status.className =
+    'status ' + tipo;
+}
+
+
+/* ==========================================================
+   CONTADOR
+   ========================================================== */
 
 function updateStatus(){
 
-  let n=0;
+  let quantidade = 0;
 
-  document.querySelectorAll('.taken').forEach(c=>{
+  document
+    .querySelectorAll('.taken')
+    .forEach(checkbox => {
 
-    if(c.checked)n++;
+      if(checkbox.checked){
+        quantidade++;
+      }
 
-  });
-
-  document.getElementById('status').textContent=
-    n+' dose(s) registrada(s)';
-
-}
+    });
 
 
-function resetAll(){
-
-  if(!confirm('Deseja limpar todas as marcações e horários?'))
-    return;
-
-  document.querySelectorAll('.taken').forEach(c=>{
-
-    c.checked=false;
-
-    c.closest('tr').classList.remove('dose-taken');
-
-  });
-
-  document.querySelectorAll('.taken-time').forEach(t=>{
-    t.value='';
-  });
-
-  save();
+  setStatus(
+    quantidade +
+    (quantidade === 1
+      ? ' dose registrada'
+      : ' doses registradas')
+  );
 
 }
 
 
-document.querySelectorAll('.taken,.taken-time').forEach(el=>{
+/* ==========================================================
+   SALVAR MARCAÇÃO LOCALMENTE
+   ==========================================================
 
-  el.addEventListener('change',()=>{
+   Isso não substitui o Google Sheets.
 
-    const row=el.closest('tr');
+   Serve como segurança para que a tela continue
+   marcada caso o usuário atualize a página.
 
-    if(el.classList.contains('taken')){
+   ========================================================== */
 
-      row.classList.toggle(
-        'dose-taken',
-        el.checked
-      );
+function salvarEstadoLocal(){
+
+  const dados = {};
+
+  document
+    .querySelectorAll('tr[data-id]')
+    .forEach(row => {
+
+      const checkbox =
+        row.querySelector('.taken');
+
+      const horario =
+        row.querySelector('.taken-time');
+
+      dados[row.dataset.id] = {
+
+        checked:
+          checkbox.checked,
+
+        time:
+          horario.value
+
+      };
+
+    });
+
+
+  try{
+
+    localStorage.setItem(
+      LOCAL_KEY,
+      JSON.stringify(dados)
+    );
+
+  }catch(error){
+
+    console.error(
+      'Não foi possível salvar localmente:',
+      error
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   CARREGAR MARCAÇÕES LOCAIS
+   ========================================================== */
+
+function carregarEstadoLocal(){
+
+  try{
+
+    const salvo =
+      localStorage.getItem(LOCAL_KEY);
+
+    if(!salvo){
+      return;
+    }
+
+    const dados =
+      JSON.parse(salvo);
+
+
+    document
+      .querySelectorAll('tr[data-id]')
+      .forEach(row => {
+
+        const registro =
+          dados[row.dataset.id];
+
+        if(!registro){
+          return;
+        }
+
+
+        const checkbox =
+          row.querySelector('.taken');
+
+        const horario =
+          row.querySelector('.taken-time');
+
+
+        checkbox.checked =
+          !!registro.checked;
+
+
+        horario.value =
+          registro.time || '';
+
+
+        row.classList.toggle(
+          'dose-taken',
+          checkbox.checked
+        );
+
+      });
+
+  }catch(error){
+
+    console.error(
+      'Erro ao carregar estado local:',
+      error
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   ENVIAR DOSE PARA GOOGLE SHEETS
+   ========================================================== */
+
+function enviarDose(row){
+
+  if(
+    !GOOGLE_SCRIPT_URL ||
+    GOOGLE_SCRIPT_URL.includes(
+      'COLE_AQUI'
+    )
+  ){
+
+    setStatus(
+      '⚠️ Configure primeiro a URL do Apps Script.',
+      'error'
+    );
+
+    console.error(
+      'GOOGLE_SCRIPT_URL não configurada.'
+    );
+
+    return false;
+  }
+
+
+  const checkbox =
+    row.querySelector('.taken');
+
+  const horario =
+    row.querySelector('.taken-time');
+
+
+  if(!checkbox.checked){
+    return false;
+  }
+
+
+  /*
+    Se o usuário marcou a caixa sem preencher
+    o horário, usamos o horário atual.
+  */
+
+  if(!horario.value){
+
+    horario.value =
+      obterHoraAtual();
+
+  }
+
+
+  const data =
+    row.dataset.data ||
+    obterDataAtual();
+
+
+  const horarioPrevisto =
+    row.querySelector('.time')
+      .textContent
+      .trim()
+      .split('\n')[0];
+
+
+  const remedio =
+    row.dataset.remedio || '';
+
+
+  const dose =
+    row.dataset.dose || '';
+
+
+  const observacao =
+    row.dataset.observacao || '';
+
+
+  /*
+    Cria um formulário temporário.
+
+    Usamos POST tradicional em vez de fetch()
+    para evitar problemas de CORS no GitHub Pages.
+  */
+
+  const form =
+    document.createElement('form');
+
+  form.method =
+    'POST';
+
+  form.action =
+    GOOGLE_SCRIPT_URL;
+
+  form.target =
+    'googleScriptFrame';
+
+  form.style.display =
+    'none';
+
+
+  function adicionarCampo(nome, valor){
+
+    const input =
+      document.createElement('input');
+
+    input.type =
+      'hidden';
+
+    input.name =
+      nome;
+
+    input.value =
+      valor;
+
+    form.appendChild(input);
+
+  }
+
+
+  adicionarCampo(
+    'data',
+    data
+  );
+
+  adicionarCampo(
+    'remedio',
+    remedio
+  );
+
+  adicionarCampo(
+    'horarioPrevisto',
+    horarioPrevisto
+  );
+
+  adicionarCampo(
+    'horarioTomado',
+    horario.value
+  );
+
+  adicionarCampo(
+    'dose',
+    dose
+  );
+
+  adicionarCampo(
+    'observacao',
+    observacao
+  );
+
+
+  document.body.appendChild(form);
+
+
+  setStatus(
+    '☁️ Salvando online...',
+    'saving'
+  );
+
+
+  form.submit();
+
+
+  /*
+    Removemos o formulário depois do envio.
+  */
+
+  setTimeout(() => {
+
+    if(form.parentNode){
+
+      form.parentNode.removeChild(form);
 
     }
 
-    save();
+    setStatus(
+      '☁️ Dose enviada para a planilha.',
+      'success'
+    );
+
+  }, 1000);
+
+
+  return true;
+
+}
+
+
+/* ==========================================================
+   CHECKBOXES
+   ========================================================== */
+
+document
+  .querySelectorAll('.taken')
+  .forEach(checkbox => {
+
+    checkbox.addEventListener(
+      'change',
+      function(){
+
+        const row =
+          this.closest('tr');
+
+
+        row.classList.toggle(
+          'dose-taken',
+          this.checked
+        );
+
+
+        /*
+          Se marcou a dose:
+          envia para a planilha.
+        */
+
+        if(this.checked){
+
+          enviarDose(row);
+
+        }
+
+
+        /*
+          Mantém a tela marcada localmente.
+        */
+
+        salvarEstadoLocal();
+
+        updateStatus();
+
+      }
+    );
 
   });
 
-});
+
+/* ==========================================================
+   HORÁRIOS
+   ========================================================== */
+
+document
+  .querySelectorAll('.taken-time')
+  .forEach(campo => {
+
+    campo.addEventListener(
+      'change',
+      function(){
+
+        const row =
+          this.closest('tr');
+
+        const checkbox =
+          row.querySelector('.taken');
 
 
-document.getElementById('notes').addEventListener(
+        /*
+          Se o usuário informou o horário
+          e a dose já está marcada,
+          envia novamente o registro.
+        */
+
+        if(
+          checkbox.checked &&
+          this.value
+        ){
+
+          enviarDose(row);
+
+        }
+
+
+        salvarEstadoLocal();
+
+      }
+    );
+
+  });
+
+
+/* ==========================================================
+   ANOTAÇÕES
+   ========================================================== */
+
+const notes =
+  document.getElementById('notes');
+
+
+const notesStatus =
+  document.getElementById('notesStatus');
+
+
+notes.addEventListener(
   'input',
-  save
+  function(){
+
+    try{
+
+      localStorage.setItem(
+        'quadro-remedios-notes',
+        this.value
+      );
+
+      notesStatus.textContent =
+        'Anotação salva neste dispositivo.';
+
+    }catch(error){
+
+      notesStatus.textContent =
+        'Não foi possível salvar a anotação.';
+
+    }
+
+  }
 );
 
-load();
+
+/* ==========================================================
+   CARREGAR ANOTAÇÕES
+   ========================================================== */
+
+try{
+
+  const anotacao =
+    localStorage.getItem(
+      'quadro-remedios-notes'
+    );
+
+  if(anotacao){
+
+    notes.value =
+      anotacao;
+
+  }
+
+}catch(error){
+
+  console.error(
+    'Erro ao carregar anotações:',
+    error
+  );
+
+}
+
+
+/* ==========================================================
+   LIMPAR MARCAÇÕES
+   ==========================================================
+
+   ATENÇÃO:
+
+   Isso NÃO apaga a planilha.
+
+   O histórico online permanece.
+
+   Apenas limpa a tela deste dispositivo.
+
+   ========================================================== */
+
+function resetAll(){
+
+  if(
+    !confirm(
+      'Deseja limpar as marcações da tela?\\n\\n' +
+      'Os registros já enviados para a Google Planilha NÃO serão apagados.'
+    )
+  ){
+
+    return;
+
+  }
+
+
+  document
+    .querySelectorAll('.taken')
+    .forEach(checkbox => {
+
+      checkbox.checked =
+        false;
+
+      checkbox
+        .closest('tr')
+        .classList
+        .remove('dose-taken');
+
+    });
+
+
+  document
+    .querySelectorAll('.taken-time')
+    .forEach(campo => {
+
+      campo.value =
+        '';
+
+    });
+
+
+  salvarEstadoLocal();
+
+  updateStatus();
+
+}
+
+
+/* ==========================================================
+   INICIALIZAÇÃO
+   ========================================================== */
+
+carregarEstadoLocal();
+
+updateStatus();
 
 </script>
 
