@@ -8,6 +8,7 @@
 <title>Quadro de Horários dos Remédios</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -42,6 +43,15 @@ header h1{
 header p{
   margin:8px 0 0;
   font-size:18px;
+}
+
+.online{
+  display:inline-block;
+  margin-top:12px;
+  padding:7px 13px;
+  border-radius:20px;
+  background:#ffffff2b;
+  font-size:13px;
 }
 
 .card{
@@ -204,12 +214,8 @@ button:disabled{
 .status{
   margin-top:10px;
   font-size:14px;
-  font-weight:bold;
   color:#52658e;
-}
-
-.status.saving{
-  color:#d58a00;
+  font-weight:bold;
 }
 
 .status.success{
@@ -220,6 +226,10 @@ button:disabled{
   color:#c62828;
 }
 
+.status.saving{
+  color:#d58a00;
+}
+
 .date-today{
   margin-top:15px;
   text-align:center;
@@ -227,19 +237,6 @@ button:disabled{
   color:#19316c;
 }
 
-.online-indicator{
-  display:inline-block;
-  margin-top:8px;
-  padding:5px 10px;
-  border-radius:15px;
-  background:#ffffff33;
-  font-size:13px;
-}
-
-/*
-  Formulários usados para enviar os dados ao Apps Script.
-  Eles ficam invisíveis para o usuário.
-*/
 .hidden-frame{
   display:none;
 }
@@ -269,26 +266,32 @@ button:disabled{
     grid-template-columns:1fr;
   }
 
-  .hide-mobile{
-    display:none;
-  }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
 <header>
 
-  <h1>💊 QUADRO DE HORÁRIOS DOS REMÉDIOS</h1>
+  <h1>
+    💊 QUADRO DE HORÁRIOS DOS REMÉDIOS
+  </h1>
 
   <p>
     Organize • Acompanhe • Cuide
   </p>
 
-  <div class="online-indicator">
+  <div class="online">
     ☁️ Registros salvos online
   </div>
 
@@ -296,13 +299,14 @@ button:disabled{
 
 
 <div class="date-today">
-  📅 <span id="today"></span>
+  📅 Hoje:
+  <span id="today"></span>
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      ALLEGRA
-========================= -->
+===================================================== -->
 
 <section class="card">
 
@@ -310,24 +314,30 @@ button:disabled{
     ☀️ USO DIÁRIO — ALLEGRA (ANTIALÉRGICO)
   </div>
 
+
   <table>
 
     <thead>
 
       <tr>
+
         <th>Horário previsto</th>
         <th>Remédio</th>
         <th>Observação</th>
         <th>Horário que foi tomado</th>
         <th>✓ Tomado</th>
+
       </tr>
 
     </thead>
 
+
     <tbody>
+
 
       <tr
         data-id="allegra-07"
+        data-data="11/08/2026"
         data-remedio="Allegra"
         data-dose=""
         data-observacao="Manhã"
@@ -366,6 +376,7 @@ button:disabled{
 
       <tr
         data-id="allegra-19"
+        data-data="11/08/2026"
         data-remedio="Allegra"
         data-dose=""
         data-observacao="Noite"
@@ -401,6 +412,7 @@ button:disabled{
 
       </tr>
 
+
     </tbody>
 
   </table>
@@ -408,9 +420,9 @@ button:disabled{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      DIPIRONA
-========================= -->
+===================================================== -->
 
 <section class="card">
 
@@ -430,6 +442,7 @@ button:disabled{
     <thead>
 
       <tr>
+
         <th>Data</th>
         <th>Horário previsto</th>
         <th>Remédio</th>
@@ -437,6 +450,7 @@ button:disabled{
         <th>Observação</th>
         <th>Horário que foi tomado</th>
         <th>✓</th>
+
       </tr>
 
     </thead>
@@ -445,7 +459,7 @@ button:disabled{
     <tbody>
 
 
-      <!-- 11/08 -->
+      <!-- ================= 11/08 ================= -->
 
       <tr
         data-id="dip-11-08"
@@ -580,7 +594,7 @@ button:disabled{
       </tr>
 
 
-      <!-- 12/08 -->
+      <!-- ================= 12/08 ================= -->
 
       <tr
         data-id="dip-12-06"
@@ -689,6 +703,10 @@ button:disabled{
         </td>
 
         <td>
+          Dipirona
+        </td>
+
+        <td>
           4 ml
         </td>
 
@@ -715,7 +733,7 @@ button:disabled{
       </tr>
 
 
-      <!-- 13/08 -->
+      <!-- ================= 13/08 ================= -->
 
       <tr
         data-id="dip-13-04"
@@ -849,6 +867,7 @@ button:disabled{
 
       </tr>
 
+
     </tbody>
 
   </table>
@@ -856,9 +875,9 @@ button:disabled{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      BOTÕES
-========================= -->
+===================================================== -->
 
 <div class="actions">
 
@@ -880,15 +899,18 @@ button:disabled{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      AVISOS
-========================= -->
+===================================================== -->
 
 <div class="notice">
 
+
   <div class="box warning">
 
-    <h2>⚠️ ATENÇÃO</h2>
+    <h2>
+      ⚠️ ATENÇÃO
+    </h2>
 
     <p>
       • A Dipirona deve ser tomada somente se houver dor ou febre.
@@ -903,7 +925,9 @@ button:disabled{
 
   <div class="box important">
 
-    <h2>✅ IMPORTANTE</h2>
+    <h2>
+      ✅ IMPORTANTE
+    </h2>
 
     <p>
       Registre o horário em que o remédio foi tomado.
@@ -918,16 +942,19 @@ button:disabled{
 
   </div>
 
+
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      ANOTAÇÕES
-========================= -->
+===================================================== -->
 
 <div class="notes">
 
-  <h2>📝 ANOTAÇÕES</h2>
+  <h2>
+    📝 ANOTAÇÕES
+  </h2>
 
   <textarea
     id="notes"
@@ -938,16 +965,14 @@ button:disabled{
     class="status"
     id="notesStatus"
   >
-    As anotações são salvas neste dispositivo.
+    Anotações salvas neste dispositivo.
   </div>
 
 </div>
 
 
-<!--
-  Iframe invisível usado para enviar os dados
-  ao Google Apps Script sem problemas de CORS.
--->
+<!-- IFRAME INVISÍVEL -->
+
 <iframe
   name="googleScriptFrame"
   id="googleScriptFrame"
@@ -960,168 +985,219 @@ button:disabled{
 
 <script>
 
-/* ==========================================================
-   CONFIGURAÇÃO
-   ==========================================================
 
-   COLE AQUI A URL DO SEU GOOGLE APPS SCRIPT.
+/* =========================================================
+   URL DO GOOGLE APPS SCRIPT
+   =========================================================
 
-   Exemplo:
+   URL fornecida:
 
-   https://script.google.com/macros/s/ABC123.../exec
+   https://script.google.com/macros/s/AKfycbzHXrTyC6SQZN5elk2j_UA7m-xngVr-ujIJhleSb2VQuLKPHBi_H99dX7xvF8tsEa5Hmg/exec
 
-   ========================================================== */
+   ========================================================= */
 
 const GOOGLE_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbzHXrTyC6SQZN5elk2j_UA7m-xngVr-ujIJhleSb2VQuLKPHBi_H99dX7xvF8tsEa5Hmg/exec';
 
 
-/* ==========================================================
-   CONFIGURAÇÃO LOCAL
-   ========================================================== */
+/* =========================================================
+   CHAVE DO ARMAZENAMENTO LOCAL
+   ========================================================= */
 
 const LOCAL_KEY =
-  'quadro-remedios-v2';
+  'quadro-remedios-v3';
 
 
-/* ==========================================================
+/* =========================================================
    DATA ATUAL
-   ========================================================== */
+   ========================================================= */
 
 function obterDataAtual(){
 
-  const agora = new Date();
+  const agora =
+    new Date();
 
   const dia =
-    String(agora.getDate()).padStart(2,'0');
+    String(
+      agora.getDate()
+    ).padStart(2,'0');
 
   const mes =
-    String(agora.getMonth()+1).padStart(2,'0');
+    String(
+      agora.getMonth() + 1
+    ).padStart(2,'0');
 
   const ano =
     agora.getFullYear();
 
-  return `${dia}/${mes}/${ano}`;
-}
-
-
-document.getElementById('today').textContent =
-  obterDataAtual();
-
-
-/* ==========================================================
-   HORÁRIO ATUAL
-   ========================================================== */
-
-function obterHoraAtual(){
-
-  const agora = new Date();
-
-  const hora =
-    String(agora.getHours()).padStart(2,'0');
-
-  const minuto =
-    String(agora.getMinutes()).padStart(2,'0');
-
-  return `${hora}:${minuto}`;
-}
-
-
-/* ==========================================================
-   STATUS
-   ========================================================== */
-
-function setStatus(texto, tipo=''){
-
-  const status =
-    document.getElementById('status');
-
-  status.textContent =
-    texto;
-
-  status.className =
-    'status ' + tipo;
-}
-
-
-/* ==========================================================
-   CONTADOR
-   ========================================================== */
-
-function updateStatus(){
-
-  let quantidade = 0;
-
-  document
-    .querySelectorAll('.taken')
-    .forEach(checkbox => {
-
-      if(checkbox.checked){
-        quantidade++;
-      }
-
-    });
-
-
-  setStatus(
-    quantidade +
-    (quantidade === 1
-      ? ' dose registrada'
-      : ' doses registradas')
+  return (
+    dia +
+    '/' +
+    mes +
+    '/' +
+    ano
   );
 
 }
 
 
-/* ==========================================================
-   SALVAR MARCAÇÃO LOCALMENTE
-   ==========================================================
+document.getElementById(
+  'today'
+).textContent =
+  obterDataAtual();
 
-   Isso não substitui o Google Sheets.
 
-   Serve como segurança para que a tela continue
-   marcada caso o usuário atualize a página.
+/* =========================================================
+   HORÁRIO ATUAL
+   ========================================================= */
 
-   ========================================================== */
+function obterHoraAtual(){
+
+  const agora =
+    new Date();
+
+  const hora =
+    String(
+      agora.getHours()
+    ).padStart(2,'0');
+
+  const minuto =
+    String(
+      agora.getMinutes()
+    ).padStart(2,'0');
+
+  return (
+    hora +
+    ':' +
+    minuto
+  );
+
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+function setStatus(
+  mensagem,
+  tipo=''
+){
+
+  const status =
+    document.getElementById(
+      'status'
+    );
+
+  status.textContent =
+    mensagem;
+
+  status.className =
+    'status ' +
+    tipo;
+
+}
+
+
+/* =========================================================
+   CONTAR DOSES MARCADAS
+   ========================================================= */
+
+function updateStatus(){
+
+  let total = 0;
+
+  document
+    .querySelectorAll('.taken')
+    .forEach(
+      checkbox => {
+
+        if(
+          checkbox.checked
+        ){
+
+          total++;
+
+        }
+
+      }
+    );
+
+
+  setStatus(
+
+    total +
+    (
+      total === 1
+        ? ' dose registrada'
+        : ' doses registradas'
+    )
+
+  );
+
+}
+
+
+/* =========================================================
+   SALVAR ESTADO NO NAVEGADOR
+   ========================================================= */
 
 function salvarEstadoLocal(){
 
   const dados = {};
 
+
   document
-    .querySelectorAll('tr[data-id]')
-    .forEach(row => {
+    .querySelectorAll(
+      'tr[data-id]'
+    )
+    .forEach(
+      row => {
 
-      const checkbox =
-        row.querySelector('.taken');
+        const checkbox =
+          row.querySelector(
+            '.taken'
+          );
 
-      const horario =
-        row.querySelector('.taken-time');
+        const horario =
+          row.querySelector(
+            '.taken-time'
+          );
 
-      dados[row.dataset.id] = {
 
-        checked:
-          checkbox.checked,
+        dados[
+          row.dataset.id
+        ] = {
 
-        time:
-          horario.value
+          checked:
+            checkbox.checked,
 
-      };
+          time:
+            horario.value
 
-    });
+        };
+
+      }
+    );
 
 
   try{
 
     localStorage.setItem(
+
       LOCAL_KEY,
-      JSON.stringify(dados)
+
+      JSON.stringify(
+        dados
+      )
+
     );
 
-  }catch(error){
+  }
+  catch(error){
 
     console.error(
-      'Não foi possível salvar localmente:',
+      'Erro no armazenamento local:',
       error
     );
 
@@ -1130,63 +1206,90 @@ function salvarEstadoLocal(){
 }
 
 
-/* ==========================================================
-   CARREGAR MARCAÇÕES LOCAIS
-   ========================================================== */
+/* =========================================================
+   CARREGAR ESTADO LOCAL
+   ========================================================= */
 
 function carregarEstadoLocal(){
 
   try{
 
     const salvo =
-      localStorage.getItem(LOCAL_KEY);
+      localStorage.getItem(
+        LOCAL_KEY
+      );
+
 
     if(!salvo){
+
       return;
+
     }
 
+
     const dados =
-      JSON.parse(salvo);
+      JSON.parse(
+        salvo
+      );
 
 
     document
-      .querySelectorAll('tr[data-id]')
-      .forEach(row => {
+      .querySelectorAll(
+        'tr[data-id]'
+      )
+      .forEach(
+        row => {
 
-        const registro =
-          dados[row.dataset.id];
+          const registro =
+            dados[
+              row.dataset.id
+            ];
 
-        if(!registro){
-          return;
+
+          if(!registro){
+
+            return;
+
+          }
+
+
+          const checkbox =
+            row.querySelector(
+              '.taken'
+            );
+
+          const horario =
+            row.querySelector(
+              '.taken-time'
+            );
+
+
+          checkbox.checked =
+            !!registro.checked;
+
+
+          horario.value =
+            registro.time ||
+            '';
+
+
+          row.classList.toggle(
+
+            'dose-taken',
+
+            checkbox.checked
+
+          );
+
         }
+      );
 
 
-        const checkbox =
-          row.querySelector('.taken');
-
-        const horario =
-          row.querySelector('.taken-time');
-
-
-        checkbox.checked =
-          !!registro.checked;
-
-
-        horario.value =
-          registro.time || '';
-
-
-        row.classList.toggle(
-          'dose-taken',
-          checkbox.checked
-        );
-
-      });
-
-  }catch(error){
+  }
+  catch(error){
 
     console.error(
-      'Erro ao carregar estado local:',
+      'Erro ao carregar dados:',
       error
     );
 
@@ -1195,50 +1298,40 @@ function carregarEstadoLocal(){
 }
 
 
-/* ==========================================================
+/* =========================================================
    ENVIAR DOSE PARA GOOGLE SHEETS
-   ========================================================== */
+   ========================================================= */
 
 function enviarDose(row){
 
-  if(
-    !GOOGLE_SCRIPT_URL ||
-    GOOGLE_SCRIPT_URL.includes(
-      'COLE_AQUI'
-    )
-  ){
-
-    setStatus(
-      '⚠️ Configure primeiro a URL do Apps Script.',
-      'error'
-    );
-
-    console.error(
-      'GOOGLE_SCRIPT_URL não configurada.'
-    );
-
-    return false;
-  }
-
-
   const checkbox =
-    row.querySelector('.taken');
+    row.querySelector(
+      '.taken'
+    );
 
   const horario =
-    row.querySelector('.taken-time');
+    row.querySelector(
+      '.taken-time'
+    );
 
 
-  if(!checkbox.checked){
-    return false;
+  if(
+    !checkbox.checked
+  ){
+
+    return;
+
   }
 
 
   /*
-    Se o usuário marcou a caixa sem preencher
+    Se o usuário marcar sem colocar
     o horário, usamos o horário atual.
   */
 
-  if(!horario.value){
+  if(
+    !horario.value
+  ){
 
     horario.value =
       obterHoraAtual();
@@ -1251,103 +1344,132 @@ function enviarDose(row){
     obterDataAtual();
 
 
+  /*
+    Pega o horário previsto da linha.
+  */
+
   const horarioPrevisto =
-    row.querySelector('.time')
+    row
+      .querySelector('.time')
       .textContent
       .trim()
-      .split('\n')[0];
+      .split(/\s+/)[0];
 
 
   const remedio =
-    row.dataset.remedio || '';
+    row.dataset.remedio ||
+    '';
 
 
   const dose =
-    row.dataset.dose || '';
+    row.dataset.dose ||
+    '';
 
 
   const observacao =
-    row.dataset.observacao || '';
+    row.dataset.observacao ||
+    '';
 
 
   /*
-    Cria um formulário temporário.
-
-    Usamos POST tradicional em vez de fetch()
-    para evitar problemas de CORS no GitHub Pages.
+    Cria formulário invisível.
   */
 
   const form =
-    document.createElement('form');
+    document.createElement(
+      'form'
+    );
+
 
   form.method =
     'POST';
 
+
   form.action =
     GOOGLE_SCRIPT_URL;
 
+
   form.target =
     'googleScriptFrame';
+
 
   form.style.display =
     'none';
 
 
-  function adicionarCampo(nome, valor){
+  function campo(
+    nome,
+    valor
+  ){
 
     const input =
-      document.createElement('input');
+      document.createElement(
+        'input'
+      );
+
 
     input.type =
       'hidden';
 
+
     input.name =
       nome;
+
 
     input.value =
       valor;
 
-    form.appendChild(input);
+
+    form.appendChild(
+      input
+    );
 
   }
 
 
-  adicionarCampo(
+  campo(
     'data',
     data
   );
 
-  adicionarCampo(
+
+  campo(
     'remedio',
     remedio
   );
 
-  adicionarCampo(
+
+  campo(
     'horarioPrevisto',
     horarioPrevisto
   );
 
-  adicionarCampo(
+
+  campo(
     'horarioTomado',
     horario.value
   );
 
-  adicionarCampo(
+
+  campo(
     'dose',
     dose
   );
 
-  adicionarCampo(
+
+  campo(
     'observacao',
     observacao
   );
 
 
-  document.body.appendChild(form);
+  document.body.appendChild(
+    form
+  );
 
 
   setStatus(
-    '☁️ Salvando online...',
+    '☁️ Enviando para a planilha...',
     'saving'
   );
 
@@ -1356,131 +1478,149 @@ function enviarDose(row){
 
 
   /*
-    Removemos o formulário depois do envio.
+    Aguarda o envio.
   */
 
-  setTimeout(() => {
+  setTimeout(
+    () => {
 
-    if(form.parentNode){
+      if(
+        form.parentNode
+      ){
 
-      form.parentNode.removeChild(form);
+        form.parentNode.removeChild(
+          form
+        );
 
-    }
-
-    setStatus(
-      '☁️ Dose enviada para a planilha.',
-      'success'
-    );
-
-  }, 1000);
+      }
 
 
-  return true;
+      setStatus(
+        '☁️ Registro enviado para a planilha.',
+        'success'
+      );
+
+    },
+    1500
+  );
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    CHECKBOXES
-   ========================================================== */
+   ========================================================= */
 
 document
-  .querySelectorAll('.taken')
-  .forEach(checkbox => {
+  .querySelectorAll(
+    '.taken'
+  )
+  .forEach(
+    checkbox => {
 
-    checkbox.addEventListener(
-      'change',
-      function(){
+      checkbox.addEventListener(
+        'change',
+        function(){
 
-        const row =
-          this.closest('tr');
-
-
-        row.classList.toggle(
-          'dose-taken',
-          this.checked
-        );
+          const row =
+            this.closest(
+              'tr'
+            );
 
 
-        /*
-          Se marcou a dose:
-          envia para a planilha.
-        */
+          row.classList.toggle(
 
-        if(this.checked){
+            'dose-taken',
 
-          enviarDose(row);
+            this.checked
+
+          );
+
+
+          if(
+            this.checked
+          ){
+
+            enviarDose(
+              row
+            );
+
+          }
+
+
+          salvarEstadoLocal();
+
+          updateStatus();
 
         }
+      );
+
+    }
+  );
 
 
-        /*
-          Mantém a tela marcada localmente.
-        */
-
-        salvarEstadoLocal();
-
-        updateStatus();
-
-      }
-    );
-
-  });
-
-
-/* ==========================================================
-   HORÁRIOS
-   ========================================================== */
+/* =========================================================
+   HORÁRIO TOMADO
+   ========================================================= */
 
 document
-  .querySelectorAll('.taken-time')
-  .forEach(campo => {
+  .querySelectorAll(
+    '.taken-time'
+  )
+  .forEach(
+    campo => {
 
-    campo.addEventListener(
-      'change',
-      function(){
+      campo.addEventListener(
+        'change',
+        function(){
 
-        const row =
-          this.closest('tr');
+          const row =
+            this.closest(
+              'tr'
+            );
 
-        const checkbox =
-          row.querySelector('.taken');
+
+          const checkbox =
+            row.querySelector(
+              '.taken'
+            );
 
 
-        /*
-          Se o usuário informou o horário
-          e a dose já está marcada,
-          envia novamente o registro.
-        */
+          if(
+            checkbox.checked &&
+            this.value
+          ){
 
-        if(
-          checkbox.checked &&
-          this.value
-        ){
+            enviarDose(
+              row
+            );
 
-          enviarDose(row);
+          }
+
+
+          salvarEstadoLocal();
 
         }
+      );
+
+    }
+  );
 
 
-        salvarEstadoLocal();
-
-      }
-    );
-
-  });
-
-
-/* ==========================================================
+/* =========================================================
    ANOTAÇÕES
-   ========================================================== */
+   ========================================================= */
 
 const notes =
-  document.getElementById('notes');
+  document.getElementById(
+    'notes'
+  );
 
 
 const notesStatus =
-  document.getElementById('notesStatus');
+  document.getElementById(
+    'notesStatus'
+  );
 
 
 notes.addEventListener(
@@ -1494,13 +1634,15 @@ notes.addEventListener(
         this.value
       );
 
+
       notesStatus.textContent =
         'Anotação salva neste dispositivo.';
 
-    }catch(error){
+    }
+    catch(error){
 
       notesStatus.textContent =
-        'Não foi possível salvar a anotação.';
+        'Erro ao salvar anotação.';
 
     }
 
@@ -1508,9 +1650,9 @@ notes.addEventListener(
 );
 
 
-/* ==========================================================
+/* =========================================================
    CARREGAR ANOTAÇÕES
-   ========================================================== */
+   ========================================================= */
 
 try{
 
@@ -1519,6 +1661,7 @@ try{
       'quadro-remedios-notes'
     );
 
+
   if(anotacao){
 
     notes.value =
@@ -1526,37 +1669,35 @@ try{
 
   }
 
-}catch(error){
+}
+catch(error){
 
   console.error(
-    'Erro ao carregar anotações:',
+    'Erro ao carregar anotação:',
     error
   );
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    LIMPAR MARCAÇÕES
-   ==========================================================
-
-   ATENÇÃO:
-
-   Isso NÃO apaga a planilha.
-
-   O histórico online permanece.
-
-   Apenas limpa a tela deste dispositivo.
-
-   ========================================================== */
+   ========================================================= */
 
 function resetAll(){
 
-  if(
-    !confirm(
-      'Deseja limpar as marcações da tela?\\n\\n' +
+  const confirmar =
+    confirm(
+
+      'Deseja limpar as marcações da tela?\n\n' +
+
       'Os registros já enviados para a Google Planilha NÃO serão apagados.'
-    )
+
+    );
+
+
+  if(
+    !confirmar
   ){
 
     return;
@@ -1565,28 +1706,41 @@ function resetAll(){
 
 
   document
-    .querySelectorAll('.taken')
-    .forEach(checkbox => {
+    .querySelectorAll(
+      '.taken'
+    )
+    .forEach(
+      checkbox => {
 
-      checkbox.checked =
-        false;
+        checkbox.checked =
+          false;
 
-      checkbox
-        .closest('tr')
-        .classList
-        .remove('dose-taken');
 
-    });
+        checkbox
+          .closest(
+            'tr'
+          )
+          .classList
+          .remove(
+            'dose-taken'
+          );
+
+      }
+    );
 
 
   document
-    .querySelectorAll('.taken-time')
-    .forEach(campo => {
+    .querySelectorAll(
+      '.taken-time'
+    )
+    .forEach(
+      campo => {
 
-      campo.value =
-        '';
+        campo.value =
+          '';
 
-    });
+      }
+    );
 
 
   salvarEstadoLocal();
@@ -1596,9 +1750,9 @@ function resetAll(){
 }
 
 
-/* ==========================================================
+/* =========================================================
    INICIALIZAÇÃO
-   ========================================================== */
+   ========================================================= */
 
 carregarEstadoLocal();
 
